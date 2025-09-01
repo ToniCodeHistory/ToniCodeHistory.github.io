@@ -16,7 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggle = document.getElementById('themeToggle');
     const root = document.documentElement;
     const saved = localStorage.getItem('theme');
-    if (saved) root.setAttribute('data-theme', saved);
+    // choose initial theme: saved preference or system preference (prefers-color-scheme)
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initial = saved ? saved : (prefersDark ? 'dark' : 'light');
+    root.setAttribute('data-theme', initial);
 
     function setTheme(t) {
         root.setAttribute('data-theme', t);
