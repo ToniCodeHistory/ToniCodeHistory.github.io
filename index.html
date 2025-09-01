@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>學習歷程(陳國翔)</title>
+    <meta name="description" content="我的學習資料、專案與歷程—簡潔現代的個人檔案頁面。">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="brand">高中的學習歷程</h1>
+        <button id="mobileNavToggle" class="mobile-nav-toggle" aria-label="顯示選單">☰</button>
+        <nav class="nav" id="siteNav">
+                <a href="#about">關於我</a>
+                <a href="#timeline">時間軸</a>
+                <a href="#resources">資料與專案</a>
+                <a href="#contact">聯絡</a>
+            </nav>
+            <button id="themeToggle" class="theme-toggle" aria-label="切換主題"></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>熱愛程式設計，持續學習新技術</h2>
+                <p class="lead">這裡是我放過去的專案與時間軸的地方。</p>
+                <p class="cta">
+                    <a href="#about" class="btn">繼續</a>
+                    <a class="btn ghost" href="https://tonixiang.github.io/index.html">查看目前時間軸</a>
+                </p>
+            </div>
+        </section>
+
+        <section id="about" class="container section about">
+            <h3>關於我</h3>
+                <div class="about-grid">
+                    <img class="avatar" src="img/me.png">
+                    <div>
+                        <p>Hello 我是陳國翔 :D</p>
+                        <p>高中時期我經常在課後做小專題，會用 C# 做一些工具程式，也嘗試把微控制器或感測器接到 PC 上做簡單整合。那段時間最喜歡的是拆東西、實驗，因為 GPT 當時還沒普及，都靠自己摸索和網路上搜索，從實作中學到很多問題排查和系統思考的技巧。英文方面平時會看程式相關文件，閱讀沒太大問題，能幫助我快速查資料與學新技術。</p>
+                    </div>
+                </div>
+        </section>
+
+        <section id="timeline" class="container section timeline">
+            <h3>時間軸</h3>
+            <ol>
+                <li>
+                    <strong>2020</strong>
+                    <p>打好 C 語言基礎，熟悉基本語法與控制結構。</p>
+                </li>
+                <li>
+                    <strong>2021</strong>
+                    <p>學習 C#，深入學習資料結構與演算法，參加各種程式競賽(APCS、ITSA)。</p>
+                </li>
+                <li>
+                    <strong>2022</strong>
+                    <p>考電腦軟體設計證照，參加技藝競賽。</p>
+                </li>
+                <li>
+                    <strong>2023 ~ 高中畢業</strong>
+                    <p>持續深化 C# 與 .NET 技能，實作高中專題。</p>
+                </li>
+            </ol>
+        </section>
+
+        <section id="resources" class="container section resources">
+            <h3>資料與專案</h3>
+            <div class="grid">
+                <article class="card">
+                    <h4>高中專題：一站式餐飲平台</h4>
+                    <p>團隊專題，使用 Window Forms Apps 與 Arduino 進行整合，實現客人點餐、訂單管理。</p>
+            <p class="muted">連結或檔案位置：<em><a class="text-button"
+                href="https://drive.google.com/drive/u/0/folders/1iv2X3HrAGFCb7bnGfGT0HEIaTfiW-f-3">雲端資料夾</a></em>
+            </p>
+                </article>
+
+                <article class="card">
+                    <h4>競賽題目：高職技藝競賽</h4>
+                    <p>常見資料結構與範例題解，適合面試與自我評估。</p>
+                    <p class="muted">連結或檔案位置：<em><a class="text-button"
+                                href="https://github.com/ToniCodeHistory/EngineeringCompetition">軟體設計</a></em></p>
+                    <p class="muted">連結或檔案位置：<em><a class="text-button"
+                                href="https://github.com/ToniCodeHistory/BusinessCompetition">程式設計</a></em></p>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="container section contact">
+            <h3>聯絡</h3>
+            <p>目前不開放聯絡表單，感謝您的關注。</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© <span id="year"></span> 陳國翔</p>
+            <p>未來將持續學習與成長，但不會在此公開了。</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
