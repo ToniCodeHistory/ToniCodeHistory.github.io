@@ -49,4 +49,43 @@ document.addEventListener('DOMContentLoaded', () => {
         // hide nav when clicking a link
         siteNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => siteNav.classList.add('hidden')));
     }
+
+    // Ensure external http/https links open safely and mark them for screen readers
+    document.querySelectorAll('a[href^="http"]').forEach(a => {
+        try {
+            const url = new URL(a.href);
+            const isExternal = url.origin !== location.origin;
+            if (isExternal) {
+                // enforce safe attributes if not provided
+                if (!a.hasAttribute('target')) a.setAttribute('target', '_blank');
+                if (!a.hasAttribute('rel')) a.setAttribute('rel', 'noopener noreferrer');
+                a.classList.add('external');
+                // if the link already has text, add an accessible hint only if none present
+                if (!a.getAttribute('aria-label')) {
+                    a.setAttribute('aria-label', a.textContent.trim() + '（外部連結，在新分頁開啟）');
+                }
+            }
+        } catch (e) {
+            // ignore invalid URLs
+        }
+    });
+
+    // slide-in animation: observe .hero and add .in-view when it enters viewport
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        if ('IntersectionObserver' in window) {
+            const io = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            io.observe(hero);
+        } else {
+            // fallback: add class after a short delay on load
+            window.addEventListener('load', () => setTimeout(() => hero.classList.add('in-view'), 120));
+        }
+    }
 });

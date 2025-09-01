@@ -9,11 +9,16 @@
 }
 
 [data-theme="dark"] {
-    --bg: #0b1020;
-    --card: #081126;
+    --bg: #000000;
+    --card: #0a0a0a;
     --text: #e6eef8;
-    --muted: #94a3b8;
+    --muted: #9ca3af;
     --accent: #60a5fa;
+}
+
+/* make hero neutral in dark mode (remove blue tint) */
+[data-theme="dark"] .hero {
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent 60%);
 }
 
 * {
@@ -75,6 +80,29 @@ body {
     background: linear-gradient(180deg, rgba(37, 99, 235, 0.06), transparent 60%)
 }
 
+/* slide-in animation for hero section */
+.hero {
+    /* start slightly lower and hidden; will animate to visible */
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 520ms ease, transform 520ms cubic-bezier(.2,.9,.2,1);
+    will-change: opacity, transform;
+}
+
+.hero.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero,
+    .hero.in-view {
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+}
+
 .hero .lead {
     color: var(--muted);
     max-width: 65%
@@ -93,7 +121,7 @@ body {
 .btn.ghost {
     background: transparent;
     color: var(--accent);
-    border: 1px solid rgba(37, 99, 235, 0.12)
+    border: 1px solid rgba(37, 99, 235, 0.5)
 }
 
 /* text-style button for inline links */
@@ -109,6 +137,22 @@ body {
 
 .text-button:hover {
     text-decoration: underline;
+}
+
+/* external link indicator */
+.external {
+    position: relative;
+    padding-right: 20px; /* room for icon */
+}
+
+.external::after {
+    content: '\2197'; /* north east arrow */
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.85em;
+    color: var(--muted);
 }
 
 .section {
@@ -183,7 +227,7 @@ body {
 
 .site-footer {
     padding: 20px 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.03);
+    border-top: 1px solid rgba(0, 0, 0);
     margin-top: 36px
 }
 

@@ -1,24 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>學習歷程(陳國翔)</title>
-    <meta name="description" content="我的學習資料、專案與歷程—簡潔現代的個人檔案頁面。">
-    <link rel="stylesheet" href="css/styles.css">
+    <meta name="description" content="我的學習資料、專案與歷程—簡潔現代的個人檔案頁面。" />
+    <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
     <header class="site-header">
         <div class="container">
-            <h1 class="brand">高中的學習歷程</h1>
-        <button id="mobileNavToggle" class="mobile-nav-toggle" aria-label="顯示選單">☰</button>
-        <nav class="nav" id="siteNav">
+            <h1 class="brand">學習歷程</h1>
+            <button id="mobileNavToggle" class="mobile-nav-toggle" aria-label="顯示選單">
+                ☰
+            </button>
+            <nav class="nav" id="siteNav">
                 <a href="#about">關於我</a>
                 <a href="#timeline">時間軸</a>
-                <a href="#resources">資料與專案</a>
-                <a href="#contact">聯絡</a>
+                <a href="#resources">專案</a>
+                <a href="#memory">學習歷程</a>
+                <a href="#reflection">反思</a>
+                <a href="#conclusion">結語</a>
             </nav>
             <button id="themeToggle" class="theme-toggle" aria-label="切換主題"></button>
         </div>
@@ -30,21 +34,26 @@
                 <h2>熱愛程式設計，持續學習新技術</h2>
                 <p class="lead">這裡是我放過去的專案與時間軸的地方。</p>
                 <p class="cta">
-                    <a href="#about" class="btn">繼續</a>
-                    <a class="btn ghost" href="https://tonixiang.github.io/index.html">查看目前時間軸</a>
+                    <a class="btn ghost external" href="https://tonixiang.github.io/index.html" target="_blank"
+                        rel="noopener noreferrer" aria-label="在新分頁開啟目前時間軸（外部連結）">查看目前時間軸</a>
                 </p>
             </div>
         </section>
 
         <section id="about" class="container section about">
             <h3>關於我</h3>
-                <div class="about-grid">
-                    <img class="avatar" src="img/me.png">
-                    <div>
-                        <p>Hello 我是陳國翔 :D</p>
-                        <p>高中時期我經常在課後做小專題，會用 C# 做一些工具程式，也嘗試把微控制器或感測器接到 PC 上做簡單整合。那段時間最喜歡的是拆東西、實驗，因為 GPT 當時還沒普及，都靠自己摸索和網路上搜索，從實作中學到很多問題排查和系統思考的技巧。英文方面平時會看程式相關文件，閱讀沒太大問題，能幫助我快速查資料與學新技術。</p>
-                    </div>
+            <div class="about-grid">
+                <img class="avatar" src="img/me.png" />
+                <div>
+                    <p>Hello 我是陳國翔 :D</p>
+                    <p>
+                        高中時期我經常在課後會用 C#
+                        做一些小程式，也嘗試把Arduino接到 PC
+                        上做簡單整合。那段時間最喜歡的是拆東西、實驗，因為 GPT
+                        當時還沒普及，都靠自己摸索和網路上搜索，從實作中學到很多問題排查和系統思考的技巧。平時會看程式相關文件，英文閱讀沒太大問題，能幫助我快速查資料與學新技術。
+                    </p>
                 </div>
+            </div>
         </section>
 
         <section id="timeline" class="container section timeline">
@@ -52,11 +61,14 @@
             <ol>
                 <li>
                     <strong>2020</strong>
-                    <p>打好 C 語言基礎，熟悉基本語法與控制結構。</p>
+                    <p>打好 C 語言基礎，熟悉基本語法。</p>
                 </li>
                 <li>
                     <strong>2021</strong>
-                    <p>學習 C#，深入學習資料結構與演算法，參加各種程式競賽(APCS、ITSA)。</p>
+                    <p>
+                        學習
+                        C++、C#，深入學習資料結構與演算法，參加各種程式考試(APCS、ITSA)。
+                    </p>
                 </li>
                 <li>
                     <strong>2022</strong>
@@ -70,30 +82,113 @@
         </section>
 
         <section id="resources" class="container section resources">
-            <h3>資料與專案</h3>
+            <h3>專案</h3>
             <div class="grid">
                 <article class="card">
                     <h4>高中專題：一站式餐飲平台</h4>
-                    <p>團隊專題，使用 Window Forms Apps 與 Arduino 進行整合，實現客人點餐、訂單管理。</p>
-            <p class="muted">連結或檔案位置：<em><a class="text-button"
-                href="https://drive.google.com/drive/u/0/folders/1iv2X3HrAGFCb7bnGfGT0HEIaTfiW-f-3">雲端資料夾</a></em>
-            </p>
+                    <p>
+                        團隊專題，使用 Window Forms Apps 與 Arduino
+                        進行整合，實現客人點餐、訂單管理。
+                    </p>
+                    <p class="muted">
+                        連結：<em><a class="text-button external"
+                                href="https://drive.google.com/drive/u/0/folders/1iv2X3HrAGFCb7bnGfGT0HEIaTfiW-f-3"
+                                target="_blank" rel="noopener noreferrer"
+                                aria-label="在新分頁開啟雲端資料夾（Google Drive）">雲端資料夾</a></em>
+                    </p>
                 </article>
 
                 <article class="card">
-                    <h4>競賽題目：高職技藝競賽</h4>
+                    <h4>競賽題目：技藝競賽</h4>
                     <p>常見資料結構與範例題解，適合面試與自我評估。</p>
-                    <p class="muted">連結或檔案位置：<em><a class="text-button"
-                                href="https://github.com/ToniCodeHistory/EngineeringCompetition">軟體設計</a></em></p>
-                    <p class="muted">連結或檔案位置：<em><a class="text-button"
-                                href="https://github.com/ToniCodeHistory/BusinessCompetition">程式設計</a></em></p>
+                    <p class="muted">
+                        連結：<em><a class="text-button external"
+                                href="https://github.com/ToniCodeHistory/EngineeringCompetition" target="_blank"
+                                rel="noopener noreferrer" aria-label="在新分頁開啟 GitHub：軟體設計">軟體設計</a></em>
+                    </p>
+                    <p class="muted">
+                        連結：<em><a class="text-button external"
+                                href="https://github.com/ToniCodeHistory/BusinessCompetition" target="_blank"
+                                rel="noopener noreferrer" aria-label="在新分頁開啟 GitHub：程式設計">程式設計</a></em>
+                    </p>
                 </article>
             </div>
         </section>
+        <section id="memory" class="container section memory">
+            <h3>學習歷程</h3>
+            <p>
+                回憶起在高中分享我許多經驗的學長，雖然他在比賽中失利，但是一個十分努力的人。
+            </p>
 
-        <section id="contact" class="container section contact">
-            <h3>聯絡</h3>
-            <p>目前不開放聯絡表單，感謝您的關注。</p>
+            <p>
+                我高中過去在技藝競賽「電腦軟體設計」拿到許多名次。然而，自從民國106年後就無人接手，因為訓練一個程式好的人需要靠很多時間與個人的努力，網路上的資源很有限，題目難度是大學資工系以上程度，而且只有前幾名能夠保送國立的學校，我認為考「統測」是相對輕鬆的升學方式。
+            </p>
+
+            <p>
+                直到荏學長高一「當初接手就是因為不想去什麼『動漫研究社』。」透過科主任打聽出「技優甄選」的升學管道，就是參加各種競賽，後面荏學長漸漸的發掘出興趣，才下定決心接手技藝競賽「電腦軟體設計」。
+            </p>
+
+            <p>
+                由於很多年沒人比賽，沒有相關經驗的學長或學姐會教，和指導老師對C#程式語言不熟悉，使荏學長在學習程式常常碰壁，要比其他學校的選手花費更多時間去了解程式語法，才開始學習資料結構與演算法。
+            </p>
+
+            <p>
+                我到了高一，屆時荏學長已經高二，在同學的推薦下含我共五位去練技藝競賽「電腦軟體設計」認識到荏學長，他跟我們講述：「我斷了很多年的學長，也沒人可以問，從頭開始做起，你有更多我的經驗去做，你不應該比我過得更爛。」後來教久了，每禮拜都會交代作業，除了我以外其他同學都知難而退，我猜可能是覺得處理資料很無聊或難以理解。
+            </p>
+
+            <p>
+                在荏學長比賽完，得知排名第21名，沒有優勝，當時很懷疑他自己，但後來有準備「特殊選才」，最後也是走到了國立，在勤益科大「人工智慧應用工程系」發揮他的專長，現在過得非常輕鬆。
+            </p>
+
+            <p>
+                荏學長上大學，遇到了彰師附工的選手，他是那次比賽的第八名，他們在比賽時有認識。結果，後來跟荏學長走同樣的路；在同樣地方學習。可以說是：「殊途同歸。」
+            </p>
+
+            <p>
+                在我比賽完後，得知差幾名優勝，荏學長告訴我：「不要把這次的得失心放太重，為了你的未來著想去考APCS，最少也要有六級分。有一堆學校可以報名。」然而，最後我並沒有聽從荏學長的建議，因為我知道我自己在短時間沒辦法快速學習其他語言的演算法，之後荏學長也鼓勵「『統測』分數維持450(專一專二x2)左右，你就算『聯登』也有『高科』、『中科』，好一點『雲科』。」
+            </p>
+
+            <p>
+                我給自己目標是把剩下的時間拿來準備「統測」。果然，我分數有超過台中科大「資訊工程系」的「聯登」分數門檻。後來，考試完並沒有鬆懈，報名「甄選入學」，準備備審資料和實際去面試。
+            </p>
+
+            <p>
+                俗話說：「選擇比努力更重要。」如果當初再把目標放在程式的相關考試，我不知道自己還能不能考進台中科大。我並不是自認為自己程式不好，而是把目標放在未來，當初有撐下去與課業並重，也有傳承給學弟和學妹，是我認我相當足夠的。我從荏學長獲取許多經驗，並不後悔走選手這條路。
+            </p>
+
+            <p>
+                這裡不是起點，也不是終點，而是不斷學習而成長的過程。我們必須訂定一個適合的目標，藉由不斷的努力去實現它。
+            </p>
+        </section>
+        <section id="reflection" class="container section reflection">
+            <h3>學習歷程反思</h3>
+            <ol class="reflection-list">
+                <li>
+                    <h4>我遇到了哪些問題?</h4>
+                    <p>
+                        在高三上學期，我因為投入技藝競賽的培訓，長時間待在科辦練習軟體設計，導致準備統測的複習時間被壓縮。當時我常感到焦慮與壓力，一方面擔心比賽表現，一方面又害怕在課業上落後。這段經歷讓我意識到，專注在單一目標雖然能帶來進步，但若忽略長遠的規劃，反而會造成更大的負擔。
+                    </p>
+                </li>
+                <li>
+                    <h4>我用了哪些方法解決問題?</h4>
+                    <p>
+                        因此，我學會提早規劃並分配時間。在高二時，我就先開始複習統測相關科目，避免把壓力集中在高三。同時，我也會主動向科主任請教，不只是詢問課業問題，更從他的建議中學會調整心態，懂得在「比賽」與「課業」之間取得平衡。這讓我明白，面對困難時，單靠努力並不足夠，還需要策略與自我調整。
+                    </p>
+                </li>
+                <li>
+                    <h4>我在學習的過程中如何了解自己的興趣?</h4>
+                    <p>
+                        在過程中，我也更清楚自己的興趣所在。從高二開始準備「軟體設計丙級」的時候，我不只是在背考試範圍，而是發現自己喜歡把真實問題轉化為程式解決方案。這種過程讓我體驗到學習的成就感，也讓我確定自己對程式設計有持續探索的熱情。
+                    </p>
+                </li>
+            </ol>
+        </section>
+
+        <section id="conclusion" class="container section contact">
+            <h3>結語</h3>
+            <p>
+                以上內容為我備審資料中擷取的部分資訊，用以呈現我在高中時期學習與參賽的經歷與反思。
+            </p>
         </section>
     </main>
 
