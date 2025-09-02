@@ -46,11 +46,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileToggle = document.getElementById('mobileNavToggle');
     const siteNav = document.getElementById('siteNav');
     if (mobileToggle && siteNav) {
+        // set initial visibility according to viewport width
+        if (window.innerWidth <= 700) {
+            siteNav.classList.add('hidden');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+        } else {
+            siteNav.classList.remove('hidden');
+            mobileToggle.setAttribute('aria-expanded', 'true');
+        }
+
+        // toggle nav and keep aria-expanded in sync
         mobileToggle.addEventListener('click', () => {
-            siteNav.classList.toggle('hidden');
+            const nowHidden = siteNav.classList.toggle('hidden');
+            mobileToggle.setAttribute('aria-expanded', nowHidden ? 'false' : 'true');
         });
-        // hide nav when clicking a link
-        siteNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => siteNav.classList.add('hidden')));
+
+        // hide nav when clicking a link and update aria state
+        siteNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            siteNav.classList.add('hidden');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+        }));
+
+        // keep state consistent when resizing the window
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 700) {
+                // on larger screens the nav should be visible
+                siteNav.classList.remove('hidden');
+                mobileToggle.setAttribute('aria-expanded', 'true');
+            } else {
+                // on small screens hide nav by default
+                siteNav.classList.add('hidden');
+                mobileToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
     }
 
     // Ensure external http/https links open safely and mark them for screen readers
