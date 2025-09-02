@@ -55,10 +55,16 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileToggle.setAttribute('aria-expanded', 'true');
         }
 
-        // toggle nav and keep aria-expanded in sync
+        // toggle nav and keep aria-expanded in sync (use class only, CSS handles visibility)
         mobileToggle.addEventListener('click', () => {
-            const nowHidden = siteNav.classList.toggle('hidden');
-            mobileToggle.setAttribute('aria-expanded', nowHidden ? 'false' : 'true');
+            const isHidden = siteNav.classList.contains('hidden');
+            if (isHidden) {
+                siteNav.classList.remove('hidden');
+                mobileToggle.setAttribute('aria-expanded', 'true');
+            } else {
+                siteNav.classList.add('hidden');
+                mobileToggle.setAttribute('aria-expanded', 'false');
+            }
         });
 
         // hide nav when clicking a link and update aria state
@@ -80,6 +86,31 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // header hide-on-scroll: hide header when scrolling down a bit, show when scrolling up
+    (function () {
+        const header = document.querySelector('.site-header');
+        if (!header) return;
+
+        let lastScroll = 0;
+        const THRESHOLD = 60; // start hiding after this many pixels
+        let ticking = false;
+
+        window.addEventListener('scroll', () => {
+            const current = window.pageYOffset || document.documentElement.scrollTop;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const shouldHide = (current > lastScroll && current > THRESHOLD);
+                    const isHidden = header.classList.contains('hidden');
+                    if (shouldHide && !isHidden) header.classList.add('hidden');
+                    if (!shouldHide && isHidden) header.classList.remove('hidden');
+                    lastScroll = Math.max(0, current);
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    })();
 
     // Ensure external http/https links open safely and mark them for screen readers
     document.querySelectorAll('a[href^="http"]').forEach(a => {
