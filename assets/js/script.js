@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeYear();
     initializeSmoothScroll();
     initializeScrollEffects();
-    initializeContainerHoverEffects();
 });
 
 // 初始化年份顯示
@@ -39,49 +38,5 @@ function initializeScrollEffects() {
         } else {
             header.classList.remove('scrolled');
         }
-    });
-}
-
-// 初始化容器 hover 效果
-function initializeContainerHoverEffects() {
-    const containers = document.querySelectorAll('.container');
-    
-    containers.forEach(function(container) {
-        let lastMouseY = 0;
-        let isFirstMove = true;
-        
-        container.addEventListener('mouseenter', function(e) {
-            lastMouseY = e.clientY;
-            isFirstMove = true;
-        });
-        
-        container.addEventListener('mousemove', function(e) {
-            if (isFirstMove) {
-                isFirstMove = false;
-                return;
-            }
-            
-            const currentMouseY = e.clientY;
-            const deltaY = currentMouseY - lastMouseY;
-            
-            // 移除之前的類
-            container.classList.remove('move-up', 'move-down');
-            
-            // 根據滑鼠移動方向添加類
-            if (deltaY < 0) {
-                // 向上移動
-                container.classList.add('move-up');
-            } else if (deltaY > 0) {
-                // 向下移動
-                container.classList.add('move-down');
-            }
-            
-            lastMouseY = currentMouseY;
-        });
-        
-        container.addEventListener('mouseleave', function() {
-            // 離開時移除所有方向類
-            container.classList.remove('move-up', 'move-down');
-        });
     });
 }

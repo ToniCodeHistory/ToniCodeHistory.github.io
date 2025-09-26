@@ -1,22 +1,6 @@
 /* 現代化設計 - 學習歷程網站 */
 
 :root {
-    /* 現代化色彩系統 */
-    --primary: #2563eb;
-    --primary-light: #3b82f6;
-    --primary-dark: #1d4ed8;
-    --secondary: #64748b;
-    --accent: #06b6d4;
-    
-    /* 背景色 */
-    --bg-primary: #0f172a;
-    --bg-secondary: #1e293b;
-    --bg-tertiary: #334155;
-    
-    /* 文字色 */
-    --text-primary: #f8fafc;
-    --text-secondary: #cbd5e1;
-    --text-muted: #94a3b8;
     
     /* 邊框與陰影 */
     --border-color: rgba(255, 255, 255, 0.1);
@@ -49,7 +33,7 @@ html {
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
-    color: var(--text-primary);
+    color: aliceblue;
     background: #000000;
     overflow-x: hidden;
     position: relative;
@@ -60,39 +44,7 @@ body {
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 0 2rem;
-    transition: var(--transition);
     position: relative;
-    overflow: hidden;
-}
-
-/* 向上移動效果 */
-.container.move-up:hover {
-    transform: translateY(-8px);
-}
-
-.container.move-up:hover::before {
-    transform: translateY(-15px) scale(1.02);
-    opacity: 0.15;
-}
-
-/* 向下移動效果 */
-.container.move-down:hover {
-    transform: translateY(5px);
-}
-
-.container.move-down:hover::before {
-    transform: translateY(15px) scale(1.05);
-    opacity: 0.12;
-}
-
-/* 默認 hover 效果（無方向時） */
-.container:hover:not(.move-up):not(.move-down) {
-    transform: translateY(-3px);
-}
-
-.container:hover:not(.move-up):not(.move-down)::before {
-    transform: translateY(0) scale(1);
-    opacity: 0.1;
 }
 
 @media (max-width: 1024px) {
@@ -116,7 +68,6 @@ body {
     background: url('../images/back.png') center/cover no-repeat, rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border-color);
     z-index: 1000;
     transition: var(--transition);
 }
@@ -140,9 +91,8 @@ body {
 .brand {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--text-primary);
     text-decoration: none;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
+    background: aliceblue;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -155,17 +105,16 @@ body {
 }
 
 .nav a {
-    color: var(--text-secondary);
     text-decoration: none;
     font-weight: 500;
     padding: 0.5rem 1rem;
     border-radius: var(--border-radius);
     transition: var(--transition);
     position: relative;
+    color: aliceblue;
 }
 
 .nav a:hover {
-    color: var(--text-primary);
     background: rgba(255, 255, 255, 0.1);
 }
 
@@ -187,7 +136,7 @@ body {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+    background: aliceblue;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -229,7 +178,6 @@ body {
 .btn.ghost:hover {
     background: var(--primary);
     border-color: var(--primary);
-    transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
 
@@ -239,11 +187,11 @@ body {
 }
 
 .section h3 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 3rem;
     text-align: center;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
+    background: aliceblue;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -304,7 +252,7 @@ body {
     top: 0;
     bottom: 0;
     width: 2px;
-    background: var(--primary);
+    background: #2563eb;
 }
 
 .timeline li {
@@ -319,19 +267,17 @@ body {
     top: 2.5rem;
     width: 1rem;
     height: 1rem;
-    background: var(--primary);
+    background: #2563eb;
     border-radius: 50%;
-    border: 3px solid var(--bg-primary);
+    border: 3px solid #0f172a;
 }
 
 .timeline strong {
-    color: var(--primary);
     font-size: 1.2rem;
     font-weight: 600;
 }
 
 .timeline p {
-    color: var(--text-secondary);
     margin-top: 0.5rem;
 }
 
@@ -344,21 +290,15 @@ body {
 
 .card {
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border-color);
+    border: 1px solid #334155;
     border-radius: var(--border-radius-lg);
     padding: 2rem;
     transition: var(--transition);
     backdrop-filter: blur(10px);
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-xl);
-    border-color: var(--primary);
-}
-
 .card h4 {
-    color: var(--primary);
+    color:aliceblue;
     margin-bottom: 1rem;
     font-size: 1.3rem;
 }
@@ -374,21 +314,18 @@ body {
 }
 
 .text-button {
-    color: var(--accent);
+    color: aliceblue;
     text-decoration: none;
-    font-weight: 500;
-    transition: var(--transition);
 }
 
 .text-button:hover {
-    color: var(--primary);
+    color: #2563eb;
     text-decoration: underline;
 }
 
 /* 學習歷程內容 */
 .memory-content p,
 .conclusion-content p {
-    color: var(--text-secondary);
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
     line-height: 1.7;
@@ -406,7 +343,7 @@ body {
 }
 
 .reflection-list h4 {
-    color: var(--primary);
+    color: aliceblue;
     margin-bottom: 1rem;
     font-size: 1.3rem;
 }
@@ -423,60 +360,24 @@ body {
     left: 0;
     width: 100%;
     height: 3px;
-    background: var(--accent);
+    background: #2563eb;
     border-radius: 2px;
 }
 
 .reflection-list p {
-    color: var(--text-secondary);
     line-height: 1.7;
 }
 
 /* 頁腳 */
 .site-footer {
     background: #111111;
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid #334155;
     padding: 3rem 0;
     text-align: center;
 }
 
 .footer-content p {
-    color: var(--text-muted);
     margin-bottom: 0.5rem;
-}
-
-/* 動畫 */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.section {
-    animation: fadeInUp 0.6s ease-out;
-}
-
-/* 滾動條樣式 */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--bg-secondary);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--primary);
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--primary-light);
 }
 
 /* 響應式設計 */
